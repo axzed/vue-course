@@ -2,9 +2,12 @@ const vm = Vue.createApp({
   data() {
     return {
       firstName: 'John',
-      lastName: 'Doe'
+      lastName: 'Doe',
+      url: 'https://www.google.com',
     }
   },
+  // v-bind 用法
+  // template: '<a :href="url" target="_blank">Google</a>'
   methods: {
     fullName() {
       return `${this.firstName} ${this.lastName.toUpperCase()}`;
