@@ -11,18 +11,24 @@ const vm = Vue.createApp({
   // v-bind 用法
   // template: '<a :href="url" target="_blank">Google</a>'
   methods: {
-    fullName() {
-      return `${this.firstName} ${this.lastName.toUpperCase()}`;
-    },
+
     increment() {
       this.age++;
     },
     updateLastName(msg, e) {
       // event.preventDefault() 阻止默认行为
       // event.preventDefault();
-      console.log(msg)
+      // console.log(msg)
       this.lastName = e.target.value;
-    }
+    },
+  },
+  computed: {
+    fullName() {
+      console.log('Full name computed property was called!')
+      // this.age
+      // if you add age, you change age will trigger this function
+      return `${this.firstName} ${this.lastName.toUpperCase()}`;
+    },
   }
 }).mount('#app');
 
