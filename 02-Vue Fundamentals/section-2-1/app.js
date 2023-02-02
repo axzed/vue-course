@@ -17,7 +17,10 @@ const vm = Vue.createApp({
     increment() {
       this.age++;
     },
-    updateLastName(e) {
+    updateLastName(msg, e) {
+      // event.preventDefault() 阻止默认行为
+      // event.preventDefault();
+      console.log(msg)
       this.lastName = e.target.value;
     }
   }
