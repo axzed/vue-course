@@ -29,7 +29,14 @@ const vm = Vue.createApp({
       // if you add age, you change age will trigger this function
       return `${this.firstName} ${this.lastName.toUpperCase()}`;
     },
-  }
+  },
+  watch: {
+    age(newAge, oldAge) {
+      setTimeout(() => {
+        this.age = 20;
+      }, 3000)
+    }
+  },
 }).mount('#app');
 
 // setTimeout(() => {
